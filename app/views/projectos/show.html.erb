@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+<!-- 
+<p>
+  <strong>Title:</strong>
+  <%= @projecto.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @projecto.body %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% @projecto.image %>
+   <%= image_tag @projecto.image.url.to_s %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @projecto.completed %>
+</p> -->
+<style>
+	.projectTitle{
+		background-color: yellow;
+		margin-top: 30px;
+		text-align: center;
+		font-weight: 400;
+		font-size: 2em;
+		font-family: sans-serif;
+		text-transform: capitalize;
+	}
+	.projectBody{
+		background-color: aqua;
+		margin-top: 40px;
+		padding: 15px;
+		border-radius: 3px;
+		font-size: 1.2em;
+	}
+</style>
+
+<div class="container" style="background-color: pink;">
+	<!-- image -->
+	<div class="row col-md-6 col-md-push-3" style="background-color: orange;">
+		<!-- check if image file exists before display -->
+		<%= @projecto.image.thumb.file.exists? ? 
+				(image_tag @projecto.image.thumb.url.to_s) : 
+		"No Project Image (add default image)" %>
+	</div>
+	<!-- title -->
+	<div class="col-md-12 projectTitle">
+		<h1><%= @projecto.title %></h1>
+	</div>
+	<!-- body -->
+	<div class="col-md-12 projectBody">
+		<h1><%= @projecto.body %></h1>
+	</div>
+</div>
+
+
+
+
+
+
+
+<% link_to 'Edit', edit_projecto_path(@projecto) %>
+<% link_to 'Back', projectos_path %>

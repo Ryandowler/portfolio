@@ -1,0 +1,48 @@
+<div class="container" style="padding-top: 30px;">
+  <h2 style="font-size: 2em; margin-bottom: 20px"><span>All Projects</span></h2>
+    <div class="row">
+      <% @projectos.each do |p| %>
+        <div class="col-md-5 project <%= "#{cycle('blahignore', 'col-md-push-2')}" %>">
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                <%= p.image.thumb.file.exists? ? 
+                    (image_tag p.image.thumb.url.to_s) : 
+                "No Project Image (add default image)" %>
+                <div>
+                  <%= link_to "View", projecto_path(p), class: "btn" %>
+                </div>
+              </div>
+              <div style="margin-top: 16px; "> </div><!--  make space without braking the image hover -->
+              <div class="pi-price"><%= link_to p.title, projecto_path(p) %></div><br><br>
+              <!-- <p><%= truncate(p.body, :length => 17) %> </p> -->
+              <h4 style="padding-top: 40px;"> Made with: 
+                <!-- icon docs -> http://fizzed.com/oss/font-mfizz -->
+                  <i class="icon-ruby language_icon red" data-toggle="tooltip" title="Ruby"></i>
+                  <i class="icon-jquery language_icon Jqueryblue" data-toggle="tooltip" title="Jquery"></i>
+                  <i class="icon-ruby-on-rails-alt language_icon red" data-toggle="tooltip" title="Beautiful Rails"></i>
+                  <i class="icon-php language_icon phpblue" data-toggle="tooltip" title="PHP"></i>
+                  <%= link_to "View Project", projecto_path(p), class: "btn add2cart" %>
+              </h4>
+              <div class="sticker sticker-new"></div>
+            </div>
+        </div>
+      <% end %>  
+    </div>
+</div>
+
+
+
+<style>
+  .project{margin-bottom: 70px;}
+  .project p {color: grey}
+  .language_icon{ font-size: 2em; }
+  .red{ color: #F44848;}
+  .Jqueryblue{ color: #99cdff;}
+  .phpblue{ color: #447bbf;}
+
+  .product-item{border-radius: 5px;}
+
+.portfolioImage{
+  /*padding-bottom: 15px; */
+}
+</style>

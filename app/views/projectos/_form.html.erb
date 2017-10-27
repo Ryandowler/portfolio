@@ -1,0 +1,33 @@
+<%= simple_form_for @projecto , :html => { :multipart => true } do |f| %>
+  <% if @projecto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@projecto.errors.count, "error") %> prohibited this projecto from being saved:</h2>
+
+      <ul>
+      <% @projecto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

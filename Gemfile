@@ -11,9 +11,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 4.2'
-gem 'activeadmin', github: 'activeadmin'
-gem 'active_skin'
-
+#gem 'activeadmin', github: 'activeadmin'
+#gem 'active_skin'
+gem 'carrierwave', '~> 1.0'
+gem 'simple_form', '~> 3.3', '>= 3.3.1'
+gem 'mini_magick'
+gem 'font-mfizz-rails', '~> 1.1', '>= 1.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,135 @@
+
+  <section id="cd-intro" style="border-top: 9px solid white;  ">
+<!--     <h1>Ryan Dowler <br> Developer Portfolio</h1> -->
+    <div id="cd-intro-tagline"> </div> <!-- used by the css -->
+    <center>
+      <a href="#cd-placeholder-1" class="cd-btn" style="display: none">
+        Contact Me
+      </a>
+
+      <a href="#cd-placeholder-1" class="cd-btn2">
+         Give me More Info <br><br>
+        <span class="glyphicon glyphicon-triangle-bottom"></span>
+      </a>
+
+    </center>
+  </section> <!-- #cd-intro -->
+
+  <div class="cd-secondary-nav">
+    <a href="#0" class="cd-secondary-nav-trigger">Menu<span></span></a> <!-- button visible on small devices -->
+    <nav>
+      <ul>
+        <li>
+          <a href="#cd-placeholder-1">
+            <b>About me</b>
+            <span></span><!-- icon -->
+          </a>
+        </li>
+        <li>
+          <a href="#cd-placeholder-2">
+            <b>Previous Position</b>
+            <span></span><!-- icon -->
+          </a>
+        </li>
+        <li>
+          <a href="#cd-placeholder-3">
+            <b>Industry Projects</b>
+            <span></span><!-- icon -->
+          </a>
+        </li>
+        <li>
+          <a href="#cd-placeholder-4">
+            <b>Projects</b>
+            <span></span><!-- icon -->
+          </a>
+        </li>
+        <li class ="slideContantcBtn">
+          <a href="#cd-placeholder-5">
+            <b>remove this</b>
+            <span></span><!-- icon -->
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div> <!-- .cd-secondary-nav -->
+  <main class="cd-main-content">
+    <section id="cd-placeholder-1" class="cd-section cd-container">
+      <h2 class="test"><span>About me</span></h2>
+
+      <p class="test"><span><b>Uitgevoerde werkzaamheden</b></span></p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
+      </p>
+    </section> <!-- #cd-placeholder-1 -->
+
+    <section id="cd-placeholder-2" class="cd-section cd-container">
+      <h2><span>Previous Position</span></h2>
+      <p>
+        I worked at a small web development company for my third year internship. My time at Artizan was an amazing experience, I have been eagerly waiting to see how the "Real World" would be, would I sink or would I be able to keep up with the big dog programmers?
+
+        When I started I was given tasks such as remake the current site (subaru.ie) using the tools the company use so I can get used to them. I got through quite a good bit in a short time during my first day. The manager took me off this task shortly after and began to give me various small jobs on prodution sites. Once I proved that I am greatly interested in coding and that I could work fast I was given my first site to work on by myself (stages after designing). I loved this as i like to get stuck in and chip away at a big project. This company usually deals with freelancers over seas, but once I showed that I  also had the nessesary skills just like these developers I was given more responsibility and the need for external help dwindled. This was massive for me, I
+      </p>
+    </section> <!-- #cd-placeholder-1 -->
+    <section id="cd-placeholder-3" class="cd-section cd-container">
+    <h2><span>Industry Projects</span></h2>
+      <p>
+        The following are projects I am grateful to have worked on professionally.
+      </p>
+    </section> <!-- #cd-placeholder-1 -->
+    <section id="cd-placeholder-4" class="cd-section cd-container" >
+    <h2><span><%= link_to "Projects", projectos_projects_all_path, title: 'View all projects', data: { toggle: 'tooltip'} %></span></h2>
+    <div class="" style="background-color: red;" >
+      <% @projectos.first(2).each do |p| %>
+        <div class="col-md-5 <%= "#{cycle('leftProject', 'col-md-push-1 rightProject')}" %>">
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                <%= p.image.thumb.file.exists? ? 
+                    (image_tag p.image.thumb.url.to_s) : 
+                "No Project Image (add default image)" %>
+                <div>
+                  <%= link_to "View", projecto_path(p), class: "btn" %>
+                </div>
+              </div>
+              <div style="margin-top: 16px; "> </div><!--  make space without braking the image hover -->
+              <div class="pi-price"><%= link_to p.title, projecto_path(p) %></div><br><br>
+              <!-- <p><%= truncate(p.body, :length => 17) %> </p> -->
+              <h4 style="padding-top: 40px;"> Made with: 
+                <!-- icon docs -> http://fizzed.com/oss/font-mfizz -->
+                  <i class="icon-ruby language_icon red" data-toggle="tooltip" title="Ruby"></i>
+                  <i class="icon-jquery language_icon Jqueryblue" data-toggle="tooltip" title="Jquery"></i>
+                  <i class="icon-ruby-on-rails-alt language_icon red" data-toggle="tooltip" title="Beautiful Rails"></i>
+                  <i class="icon-php language_icon phpblue" data-toggle="tooltip" title="PHP"></i>
+                  <%= link_to "View Project", projecto_path(p), class: "btn add2cart" %>
+              </h4>
+              <div class="sticker sticker-new"></div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+    </div>
+    </section> <!-- #cd-placeholder-1 -->
+      <div class="col-md-12">
+        <%= button_to projectos_projects_all_path, {:method => "get", class: "btn viewAllBtn col-md-2"} do  %>
+          <text>View all projects (<%= @numProjectos %>) <i class="fa fa-arrow-right" aria-hidden="true"></i> </text>
+        <% end %>
+      </div>
+      <div class="col-md-12" style="margin-top: -70px;">
+      <%= button_to projectos_projects_all_path, {:method => "get", class: "btn viewAllBtn col-md-2"} do  %>
+        <text>Contact <i class="fa fa-phone" aria-hidden="true"></i> </text>
+      <% end %>
+    </div>
+  </main> <!-- .cd-main-content -->
+
+<style>
+  .project{
+    padding: 30px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    border: 2px solid #F44848;
+    outline: 1px solid #f0eee1;
+  }
+  .project p {color: grey}
+  .leftProject{ margin-left: -15px; }
+  .rightProject{ margin-left: 50px; }
+  .viewAllBtn{ float: right; margin: 50px; }
+</style>
