@@ -7,10 +7,17 @@
         Contact Me
       </a>
 
-      <a href="#cd-placeholder-1" class="cd-btn2">
+      <a class="cd-btn2 inforBtn" onclick="scrollDown()">
          Give me More Info <br><br>
         <span class="glyphicon glyphicon-triangle-bottom"></span>
       </a>
+      <script>
+        function scrollDown(){
+            $('html, body').animate({
+              scrollTop: ($('.cd-secondary-nav').offset().top) +20
+          },800);
+        }
+      </script>
 
     </center>
   </section> <!-- #cd-intro -->
