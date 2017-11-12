@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 
 gem 'rails', '4.2.5.1'
-gem 'sqlite3'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -30,11 +30,16 @@ group :development, :test do
   gem "factory_bot_rails"
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'sqlite3'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+end
+
+group :production do
+  gem 'pg', '~> 0.15'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
