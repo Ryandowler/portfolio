@@ -1,4 +1,5 @@
-class ProjectsController < InheritedResources::Base
+#USED TO BE THIS, DONT KNOW WHY, HEROKU NO LIKEY -> class ProjectsController < InheritedResources::Base
+class ProjectsController < ApplicationController
 
 
 	def index
