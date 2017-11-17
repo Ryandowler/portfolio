@@ -36,7 +36,7 @@ h2 > span {
     padding-bottom:1px;
     border-bottom:3px solid #3299ed;
     color:black;
-    text-align:justify
+    text-align:justify;
 }
 
 
@@ -48,7 +48,7 @@ a:hover{
     padding-bottom:3px;
     border-bottom:3px solid #F44848 ;
     color:black;
-    text-align:justify
+    text-align:justify;
 }
 
 
@@ -118,8 +118,8 @@ Navigation
   top: 0;
   left: 0;
   width: 100%;
-  height: 150px; important!
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  height: 150px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   background-color: #030d18;
   z-index: 3;
 }
@@ -259,17 +259,16 @@ Intro
   text-align: center;
   padding-top: 120px;
   line-height: 70px;
-  background: url("bg6.jpg") no-repeat center center;
-  background: url("/bg6.jpg") no-repeat center center;
-  background: url("bg6") no-repeat center center;
-  background: url("/assets/bg6.jpg") no-repeat center center;
-  background: url("assets/bg6.jpg") no-repeat center center;
+  /*background: url(image-path('bg6.jpg') no-repeat center center; done it this way before heroku and makinf this file scss*/
+  background-image: url(asset-path('bg6.jpg'));
+  background-repeat:no-repeat;
+  background-position: center;
 }
 #cd-intro h1 {
   font-size: 32px;
   font-size: 2.5rem;
   font-weight: 300;
-  color: green
+  color: green;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding-top: 20px;
