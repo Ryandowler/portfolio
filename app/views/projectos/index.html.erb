@@ -90,7 +90,7 @@
         <div class="col-md-5 <%= "#{cycle('leftProject', 'col-md-push-1 rightProject')}" %>">
             <div class="product-item">
               <div class="pi-img-wrapper">
-                <%= p.image.thumb.file.exists? ? 
+                <%# p.image.thumb.file.exists? ? 
                     (image_tag p.image.thumb.url.to_s) : 
                 "No Project Image (add default image)" %>
                 <div>
