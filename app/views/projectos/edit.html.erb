@@ -1,6 +1,11 @@
-<h1>Editing Projecto</h1>
+<% if !user_signed_in? %>
+	You are not Logged in yet. <br><br>
+	<%= link_to('Login here', new_user_session_path)  %>  
+<% else %>
+	<h1>Editing Projecto</h1>
+	<%= render 'form' %>
+	<%= link_to 'Show', @projecto %>
+	<%= link_to 'Back', projectos_path %>
+<% end %>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @projecto %> |
-<%= link_to 'Back', projectos_path %>
