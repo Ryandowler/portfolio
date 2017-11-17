@@ -260,6 +260,10 @@ Intro
   padding-top: 120px;
   line-height: 70px;
   background: url("bg6.jpg") no-repeat center center;
+  background: url("/bg6.jpg") no-repeat center center;
+  background: url("bg6") no-repeat center center;
+  background: url("/assets/bg6.jpg") no-repeat center center;
+  background: url("assets/bg6.jpg") no-repeat center center;
 }
 #cd-intro h1 {
   font-size: 32px;
