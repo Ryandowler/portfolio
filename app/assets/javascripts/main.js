@@ -105,16 +105,23 @@ $(document).click(function() {
 	var itsVisible = $( "#mobileMenu" ).hasClass("is-visible"); //the menu is visible
     if (itsVisible){ 
     	alert("------- visible -");
+    	console.log("------- visible -");
     	if(notFirstTime ==false){
     		alert("do nothibg"); 
+    		console.log("do nothibg"); 
     		notFirstTime =true;
     	}else{
     		alert("itsVisible"); 
+    		console.log("itsVisible"); 
     		closeMobileMenu();
     		notFirstTime =false;
     	}
     }
-    else{ notFirstTime =false; alert("ELSEEEEE");}
+    else{ 
+    	notFirstTime =false; 
+    	alert("ELSEEEEE");
+    	console.log("ELSEEEEE");
+    }
 });
 
 function closeMobileMenu(){
