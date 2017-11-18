@@ -15,7 +15,7 @@ body{
 }
 
 body {
-  font-size: 100%;
+  /*font-size: 100%;*/
   font-family: "Open Sans", sans-serif;
   color: #030d18;
   background-color: #f0eee1;
@@ -586,6 +586,7 @@ Secondary Fixed Navigation
   background: rgba(240, 238, 225, 0);
   width: 20px;
   height: 2px;
+  margin-top: 8px;
 }
 .cd-secondary-nav-trigger.menu-is-open span::before, .cd-secondary-nav-trigger.menu-is-open span::after {
   background: #f0eee1;
