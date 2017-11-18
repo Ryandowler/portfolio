@@ -104,16 +104,17 @@ notFirstTime =false; //needed so menu doesnt close when first click
 $(document).click(function() {
 	var itsVisible = $( "#mobileMenu" ).hasClass("is-visible"); //the menu is visible
     if (itsVisible){ 
+    	alert("------- visible -");
     	if(notFirstTime ==false){
-    		//alert("do nothibg"); 
+    		alert("do nothibg"); 
     		notFirstTime =true;
     	}else{
-    		//alert("itsVisible"); 
+    		alert("itsVisible"); 
     		closeMobileMenu();
     		notFirstTime =false;
     	}
     }
-    else{ notFirstTime =false; }
+    else{ notFirstTime =false; alert("ELSEEEEE");}
 });
 
 function closeMobileMenu(){
@@ -132,9 +133,11 @@ function mobileMenuClicked(){
 	if (menuClosed == true){ 
 		openMobileMenu();
 		menuClosed = false;
+		
 	}else{
 		closeMobileMenu();
 		menuClosed = true;
+		alert("- 2 -");
 	}
 
 };
