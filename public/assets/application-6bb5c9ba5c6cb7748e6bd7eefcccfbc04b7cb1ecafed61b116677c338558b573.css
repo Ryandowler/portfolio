@@ -1,0 +1,1291 @@
+/* project display card*/
+  /***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+
+.product-item {
+    padding: 15px;
+    background: #fff;
+    margin-top: 20px;
+    position: relative;
+}
+.product-item:hover {
+    box-shadow: 5px 5px rgba(234, 234, 234, 0.9);
+}
+.product-item:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    line-height:0;
+}
+.sticker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 63px;
+    height: 63px;
+}
+.sticker-new {
+    background: url(/assets/newest.png) no-repeat;
+    left: auto;
+    right: 0;
+}
+.pi-img-wrapper {
+    position: relative;
+}
+.pi-img-wrapper div {
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.product-item:hover>.pi-img-wrapper>div {
+    display: block;
+}
+.pi-img-wrapper div .btn {
+    padding: 3px 10px;
+    color: #fff;
+    border: 1px #fff solid;
+    margin: -13px 5px 0;
+    background: transparent;
+    text-transform: uppercase;
+    position: relative;
+    top: 50%;
+    line-height: 1.4;
+    font-size: 12px;
+}
+.product-item .btn:hover {
+    background: #e84d1c;
+    border-color: #c8c8c8;
+}
+
+.product-item h3 {
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+}
+.product-item h3 a {
+    color: #3e4d5c;
+}
+.product-item h3 a:hover {
+    color: #E02222;
+}
+.pi-price {
+    color: #e84d1c;
+    font-size: 22px;
+    float: left;
+    padding-top: 1px; 
+}
+.product-item .add2cart {
+    float: right;
+    color: #a8aeb3;
+    border: 1px #ededed solid;
+    padding: 3px 6px;
+    text-transform: uppercase;
+}
+        .product-item .add2cart:hover {
+            color: #fff;
+            background: #e84d1c;
+            border-color: #e84d1c;
+        }
+//* Place all the styles related to the projectos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//* Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+/* line 7, c:/row/portfolio/app/assets/stylesheets/style.scss */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, c:/row/portfolio/app/assets/stylesheets/style.scss */
+body {
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  color: #030d18;
+  background-color: #f0eee1;
+}
+
+/* line 20, c:/row/portfolio/app/assets/stylesheets/style.scss */
+a {
+  color: #F44848;
+  text-decoration: none;
+}
+
+/* line 25, c:/row/portfolio/app/assets/stylesheets/style.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 29, c:/row/portfolio/app/assets/stylesheets/style.scss */
+h2 {
+  text-underline-position: under;
+  /* makes space between word and underline */
+  text-decoration-color: red;
+}
+
+/* style the underlines for headers */
+/* line 36, c:/row/portfolio/app/assets/stylesheets/style.scss */
+h2 > span {
+  padding-bottom: 1px;
+  border-bottom: 3px solid #3299ed;
+  color: black;
+  text-align: justify;
+}
+
+/* line 45, c:/row/portfolio/app/assets/stylesheets/style.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 48, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-primary-nav span:hover {
+  padding-bottom: 3px;
+  border-bottom: 3px solid #F44848;
+  color: black;
+  text-align: justify;
+}
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+/* line 61, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* line 67, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 73, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.has-top-margin {
+  /* this class is given - using jQuery - to the .cd-main-content following the .cd-secondary-nav when it becomes fixed */
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 77, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .has-top-margin {
+    -webkit-animation: animate-margin-top 0.3s;
+    -moz-animation: animate-margin-top 0.3s;
+    animation: animate-margin-top 0.3s;
+    margin-top: 70px;
+  }
+}
+@-webkit-keyframes animate-margin-top {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 70px;
+  }
+}
+@-moz-keyframes animate-margin-top {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 70px;
+  }
+}
+@keyframes animate-margin-top {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 70px;
+  }
+}
+/* -------------------------------- 
+
+Navigation
+
+-------------------------------- */
+/* line 118, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #030d18;
+  z-index: 3;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 130, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-header {
+    height: 70px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+/* line 137, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#cd-logo {
+  float: left;
+  margin: 13px 0 0 5%;
+  font-weight: 400;
+  font-size: 20pt;
+}
+
+/* line 143, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#cd-logo a:hover {
+  color: #3299ed;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 148, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-logo {
+    margin: 23px 0 0 5%;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  /* line 153, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-logo.is-hidden {
+    /* assign a position fixed and move outside the viewport (on the left) */
+    opacity: 0;
+    position: fixed;
+    left: -20%;
+    margin-left: 0;
+    -webkit-transition: left 0.3s, opacity 0.3s;
+    -moz-transition: left 0.3s, opacity 0.3s;
+    transition: left 0.3s, opacity 0.3s;
+  }
+
+  /* line 163, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-logo.is-hidden.slide-in {
+    /* slide in when the secondary navigation gets fixed */
+    left: 5%;
+    opacity: 1;
+  }
+}
+/* line 170, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-primary-nav {
+  /* mobile first - navigation hidden by default, triggered by tap/click on navigation icon */
+  float: right;
+  margin-right: 5%;
+  width: 44px;
+  height: 100%;
+  background: url("/assets/cd-icon-menu.svg") no-repeat center center;
+  background-size: 44px 44px;
+}
+
+/* line 179, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-primary-nav ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* line 190, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-primary-nav ul.is-visible {
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  transform: translateY(50px);
+}
+
+/* line 197, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-primary-nav a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 5%;
+  background: #000101;
+  border-top: 1px solid #051426;
+  color: #f0eee1;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 207, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-primary-nav {
+    /* reset navigation values */
+    width: auto;
+    height: auto;
+    background: none;
+  }
+
+  /* line 213, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-primary-nav ul {
+    position: static;
+    width: auto;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    line-height: 70px;
+  }
+
+  /* line 223, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-primary-nav ul.is-visible {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 230, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-primary-nav li {
+    display: inline-block;
+    margin-left: 1em;
+  }
+
+  /* line 234, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-primary-nav a {
+    display: inline-block;
+    height: auto;
+    line-height: normal;
+    background: transparent;
+    padding: .6em 1em;
+    border-top: none;
+    color: #030d18;
+  }
+}
+/* -------------------------------- 
+
+Intro
+
+-------------------------------- */
+/* line 250, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#cd-intro {
+  position: relative;
+  /*  height: 300px;*/
+  height: auto;
+  z-index: 2;
+  background-color: #3299ed;
+  padding-bottom: 50px;
+}
+
+/* line 260, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#cd-intro #cd-intro-tagline {
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 120px;
+  line-height: 70px;
+  /*background: url(image-path('bg6.jpg') no-repeat center center; done it this way before heroku and makinf this file*/
+  /* background-image: url(asset-path('bg6.jpg'));*/
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 272, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#cd-intro h1 {
+  font-size: 32px;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: green;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-top: 20px;
+  line-height: 65px;
+}
+
+/* line 282, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#cd-intro #cd-intro-tagline {
+  /*padding-top: 420px;*/
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 287, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-intro {
+    height: 400px;
+  }
+
+  /* line 290, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-intro #cd-intro-tagline {
+    /*padding-top: 300px;*/
+  }
+
+  /* line 293, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-intro h1 {
+    font-size: 42px;
+    font-size: 3rem;
+    margin-bottom: 60px;
+  }
+
+  /* line 299, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-btn, .cd-btn2 {
+    margin-top: 300px;
+    padding-top: 300px;
+    background-color: pink;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  /* line 307, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-intro {
+    /*height: 600px;*/
+    height: auto;
+  }
+
+  /* line 312, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  #cd-intro #cd-intro-tagline {
+    padding-top: 460px;
+  }
+}
+/* line 319, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-btn, .cd-btn2 {
+  display: inline-block;
+  padding: .6em 1.1em;
+  background-color: rgba(245, 72, 74, 0.9);
+  margin-top: 1em;
+  border-radius: 1em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  font-weight: 600;
+}
+
+/* line 332, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.no-touch .cd-btn:hover {
+  background-color: #f5484a;
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 336, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-btn.is-hidden {
+    /* assign a position fixed and move outside the viewport (on the right) */
+    opacity: 0;
+    position: fixed;
+    right: -20%;
+    top: 0;
+    padding: .8em 1.2em;
+    margin: 14px 0 0;
+    -webkit-transition: right 0.3s, opacity 0.3s;
+    -moz-transition: right 0.3s, opacity 0.3s;
+    transition: right 0.3s, opacity 0.3s;
+  }
+
+  /* line 348, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-btn.is-hidden.slide-in {
+    /* slide in when the secondary nav gets fixed */
+    right: 5%;
+    opacity: 1;
+  }
+}
+/* -------------------------------- 
+
+Secondary Fixed Navigation
+
+-------------------------------- */
+/* line 360, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav {
+  position: relative;
+  z-index: 3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 366, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav ul {
+  /* mobile first - secondary navigation hidden by default, triggered by tap/click on .cd-secondary-nav-trigger*/
+  position: fixed;
+  width: 90%;
+  max-width: 400px;
+  right: 5%;
+  bottom: 20px;
+  border-radius: 0.25em;
+  background: rgba(3, 13, 24, 0.96);
+  visibility: hidden;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s;
+}
+
+/* line 393, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav ul.is-visible {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+}
+
+/* line 404, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav li a {
+  display: block;
+  padding: 1.6em;
+  border-bottom: 1px solid #092645;
+  color: #f0eee1;
+}
+
+/* line 410, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav li:last-child a {
+  border-bottom: none;
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 414, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav {
+    z-index: 1;
+    height: 100px;
+    background-color: rgba(3, 13, 24, 0.96);
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+  }
+
+  /* line 422, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav nav, .cd-secondary-nav ul, .cd-secondary-nav li, .cd-secondary-nav a {
+    height: 100%;
+  }
+
+  /* line 425, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav ul {
+    /* reset navigation values */
+    position: static;
+    width: auto;
+    max-width: 100%;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    text-align: center;
+    background-color: transparent;
+  }
+
+  /* line 439, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li {
+    display: inline-block;
+    margin-left: -4px;
+  }
+
+  /* line 443, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li a {
+    position: relative;
+    text-align: center;
+    display: block;
+    padding: 58px 40px 0 40px;
+    border-bottom: none;
+    -webkit-transition: padding 0.2s;
+    -moz-transition: padding 0.2s;
+    transition: padding 0.2s;
+  }
+
+  /* line 453, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li a b {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: rgba(240, 238, 225, 0.3);
+  }
+
+  /* line 460, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li a span {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    top: 18px;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-repeat: no-repeat;
+    background-image: url(/assets/cd-nav-icons.svg);
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+  }
+
+  /* line 479, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li a:hover b, .cd-secondary-nav li a.active b {
+    color: #f0eee1;
+  }
+
+  /* line 482, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li:nth-child(1) a span {
+    background-position: 0 0;
+  }
+
+  /* line 485, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li:nth-child(2) a span {
+    background-position: -40px 0;
+  }
+
+  /* line 488, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li:nth-child(3) a span {
+    background-position: -80px 0;
+  }
+
+  /* line 491, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li:nth-child(4) a span {
+    background-position: -120px 0;
+  }
+
+  /* line 494, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav li:nth-child(5) a span {
+    background-position: -160px 0;
+  }
+
+  /* line 497, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav.is-fixed {
+    /* on Firefox CSS transition/animation fails when parent element changes position attribute*/
+    /* so we defined to diffent classes: .is-fixed to change the position value and .is-animated to change childrens' attributes (padding and opacity)*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 70px;
+    width: 100%;
+  }
+
+  /* line 506, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav.animate-children {
+    /* on Firefox CSS transition/animation fails when parent element changes position attribute*/
+    /* so we defined to diffent classes: .is-fixed to change the position value and .is-animated to change childrens' attributes (padding and opacity)*/
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 511, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav.animate-children li a {
+    padding: 26px 30px 0 30px;
+  }
+
+  /* line 514, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav.animate-children li a span {
+    opacity: 0;
+  }
+}
+/* line 519, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 5%;
+  width: 44px;
+  height: 44px;
+  background: rgba(3, 13, 24, 0.96);
+  border-radius: 0.25em;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* line 533, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger span {
+  /* the span element is used to create the menu icon */
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f0eee1;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+/* line 554, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger span::before, .cd-secondary-nav-trigger span::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* line 562, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger span::before {
+  right: -10px;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+
+/* line 570, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger span::after {
+  left: -10px;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+
+/* line 578, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger.menu-is-open {
+  background: transparent;
+}
+
+/* line 581, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger.menu-is-open span {
+  background: rgba(240, 238, 225, 0);
+  width: 20px;
+  height: 2px;
+}
+
+/* line 586, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger.menu-is-open span::before, .cd-secondary-nav-trigger.menu-is-open span::after {
+  background: #f0eee1;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+}
+
+/* line 594, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger.menu-is-open span::before {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/* line 601, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-secondary-nav-trigger.menu-is-open span::after {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 609, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-secondary-nav-trigger {
+    display: none;
+  }
+}
+/* -------------------------------- 
+
+Placeholder Sections
+
+-------------------------------- */
+/* line 619, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-section {
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+/* line 623, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-section h2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: .6em;
+  font-weight: 700;
+}
+
+/* line 629, c:/row/portfolio/app/assets/stylesheets/style.scss */
+.cd-section p {
+  line-height: 1.6;
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 633, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-section {
+    margin: 0 auto;
+    padding: 4em 0;
+  }
+
+  /* line 637, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-section h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+
+  /* line 641, c:/row/portfolio/app/assets/stylesheets/style.scss */
+  .cd-section p {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+/*mobile menu*/
+/* line 648, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#backToTop {
+  background-color: rgba(50, 153, 237, 0.7);
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+/* line 652, c:/row/portfolio/app/assets/stylesheets/style.scss */
+#tb {
+  bottom: 3%;
+  position: absolute;
+}
+/*!
+ * Start Bootstrap - Thumbnail Gallery (https://startbootstrap.com/template-overviews/thumbnail-gallery)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-thumbnail-gallery/blob/master/LICENSE)
+ */
+
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+
+/*!
+ * Font Mfizz 2.4.1
+ * Copyright 2013-2017 Fizzed, Inc.
+ * MIT License
+ *
+ * Project: http://fizzed.com/oss/font-mfizz
+ *
+ * The font designed for technology and software geeks representing programming
+ * languages, operating systems, software engineering, and technology.
+ *
+ * Fizzed, Inc.
+ * Web: http://fizzed.com/
+ * Twitter: http://twitter.com/fizzed_inc
+ */
+
+
+
+
+@font-face {
+  font-family: "FontMfizz";
+  src: url('/assets/font-mfizz-d69ec6f83b0b6204026eedc328bf44085c4126036388ac4c494ce4d52e815fb5.eot');
+  src: url('/assets/font-mfizz-d69ec6f83b0b6204026eedc328bf44085c4126036388ac4c494ce4d52e815fb5.eot?#iefix') format("embedded-opentype"),
+       url('/assets/font-mfizz-38c5f269173283bf4e172c14e71bfd4b72ade54c1c88cabdd655630463863b41.woff') format("woff"),
+       url('/assets/font-mfizz-c945ce32139af3b4e57828c6784fe301d84b05ab9098991362aab328ebf2b001.ttf') format("truetype"),
+       url('/assets/font-mfizz-4d8f86fc77abb399355ea271b6b71ba3a9c2709a381189688dbc61ef1f1fa405.svg#font-mfizz') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "FontMfizz";
+    src: url('/assets/font-mfizz-4d8f86fc77abb399355ea271b6b71ba3a9c2709a381189688dbc61ef1f1fa405.svg#font-mfizz') format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-3dprint:before,
+.icon-alpinelinux:before,
+.icon-angular:before,
+.icon-angular-alt:before,
+.icon-antenna:before,
+.icon-apache:before,
+.icon-archlinux:before,
+.icon-aws:before,
+.icon-azure:before,
+.icon-backbone:before,
+.icon-blackberry:before,
+.icon-bomb:before,
+.icon-bootstrap:before,
+.icon-c:before,
+.icon-cassandra:before,
+.icon-centos:before,
+.icon-clojure:before,
+.icon-codeigniter:before,
+.icon-codepen:before,
+.icon-coffee-bean:before,
+.icon-cplusplus:before,
+.icon-csharp:before,
+.icon-css:before,
+.icon-css3:before,
+.icon-css3-alt:before,
+.icon-d3:before,
+.icon-database:before,
+.icon-database-alt:before,
+.icon-database-alt2:before,
+.icon-debian:before,
+.icon-docker:before,
+.icon-dreamhost:before,
+.icon-elixir:before,
+.icon-elm:before,
+.icon-erlang:before,
+.icon-exherbo:before,
+.icon-fedora:before,
+.icon-fire-alt:before,
+.icon-freebsd:before,
+.icon-freecodecamp:before,
+.icon-gentoo:before,
+.icon-ghost:before,
+.icon-git:before,
+.icon-gnome:before,
+.icon-go:before,
+.icon-go-alt:before,
+.icon-google:before,
+.icon-google-alt:before,
+.icon-google-code:before,
+.icon-google-developers:before,
+.icon-gradle:before,
+.icon-grails:before,
+.icon-grails-alt:before,
+.icon-grunt:before,
+.icon-gulp:before,
+.icon-gulp-alt:before,
+.icon-hadoop:before,
+.icon-haskell:before,
+.icon-heroku:before,
+.icon-html:before,
+.icon-html5:before,
+.icon-html5-alt:before,
+.icon-iphone:before,
+.icon-java:before,
+.icon-java-bold:before,
+.icon-java-duke:before,
+.icon-javascript:before,
+.icon-javascript-alt:before,
+.icon-jetty:before,
+.icon-jquery:before,
+.icon-kde:before,
+.icon-laravel:before,
+.icon-line-graph:before,
+.icon-linux-mint:before,
+.icon-looking:before,
+.icon-magento:before,
+.icon-mariadb:before,
+.icon-maven:before,
+.icon-microscope:before,
+.icon-mobile-device:before,
+.icon-mobile-phone-alt:before,
+.icon-mobile-phone-broadcast:before,
+.icon-mongodb:before,
+.icon-mssql:before,
+.icon-mysql:before,
+.icon-mysql-alt:before,
+.icon-netbsd:before,
+.icon-nginx:before,
+.icon-nginx-alt:before,
+.icon-nginx-alt2:before,
+.icon-nodejs:before,
+.icon-npm:before,
+.icon-objc:before,
+.icon-openshift:before,
+.icon-oracle:before,
+.icon-oracle-alt:before,
+.icon-osx:before,
+.icon-perl:before,
+.icon-phone-alt:before,
+.icon-phone-gap:before,
+.icon-phone-retro:before,
+.icon-php:before,
+.icon-php-alt:before,
+.icon-playframework:before,
+.icon-playframework-alt:before,
+.icon-plone:before,
+.icon-postgres:before,
+.icon-postgres-alt:before,
+.icon-python:before,
+.icon-raspberrypi:before,
+.icon-reactjs:before,
+.icon-redhat:before,
+.icon-redis:before,
+.icon-ruby:before,
+.icon-ruby-on-rails:before,
+.icon-ruby-on-rails-alt:before,
+.icon-rust:before,
+.icon-sass:before,
+.icon-satellite:before,
+.icon-scala:before,
+.icon-scala-alt:before,
+.icon-script:before,
+.icon-script-alt:before,
+.icon-shell:before,
+.icon-sitefinity:before,
+.icon-solaris:before,
+.icon-splatter:before,
+.icon-spring:before,
+.icon-suse:before,
+.icon-svg:before,
+.icon-symfony:before,
+.icon-tomcat:before,
+.icon-ubuntu:before,
+.icon-unity:before,
+.icon-wireless:before,
+.icon-wordpress:before,
+.icon-x11:before {
+  display: inline-block;
+  font-family: "FontMfizz";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-3dprint:before { content: "\f100"; }
+.icon-alpinelinux:before { content: "\f101"; }
+.icon-angular:before { content: "\f102"; }
+.icon-angular-alt:before { content: "\f103"; }
+.icon-antenna:before { content: "\f104"; }
+.icon-apache:before { content: "\f105"; }
+.icon-archlinux:before { content: "\f106"; }
+.icon-aws:before { content: "\f107"; }
+.icon-azure:before { content: "\f108"; }
+.icon-backbone:before { content: "\f109"; }
+.icon-blackberry:before { content: "\f10a"; }
+.icon-bomb:before { content: "\f10b"; }
+.icon-bootstrap:before { content: "\f10c"; }
+.icon-c:before { content: "\f10d"; }
+.icon-cassandra:before { content: "\f10e"; }
+.icon-centos:before { content: "\f10f"; }
+.icon-clojure:before { content: "\f110"; }
+.icon-codeigniter:before { content: "\f111"; }
+.icon-codepen:before { content: "\f112"; }
+.icon-coffee-bean:before { content: "\f113"; }
+.icon-cplusplus:before { content: "\f114"; }
+.icon-csharp:before { content: "\f115"; }
+.icon-css:before { content: "\f116"; }
+.icon-css3:before { content: "\f117"; }
+.icon-css3-alt:before { content: "\f118"; }
+.icon-d3:before { content: "\f119"; }
+.icon-database:before { content: "\f11a"; }
+.icon-database-alt:before { content: "\f11b"; }
+.icon-database-alt2:before { content: "\f11c"; }
+.icon-debian:before { content: "\f11d"; }
+.icon-docker:before { content: "\f11e"; }
+.icon-dreamhost:before { content: "\f11f"; }
+.icon-elixir:before { content: "\f120"; }
+.icon-elm:before { content: "\f121"; }
+.icon-erlang:before { content: "\f122"; }
+.icon-exherbo:before { content: "\f123"; }
+.icon-fedora:before { content: "\f124"; }
+.icon-fire-alt:before { content: "\f125"; }
+.icon-freebsd:before { content: "\f126"; }
+.icon-freecodecamp:before { content: "\f127"; }
+.icon-gentoo:before { content: "\f128"; }
+.icon-ghost:before { content: "\f129"; }
+.icon-git:before { content: "\f12a"; }
+.icon-gnome:before { content: "\f12b"; }
+.icon-go:before { content: "\f12c"; }
+.icon-go-alt:before { content: "\f12d"; }
+.icon-google:before { content: "\f12e"; }
+.icon-google-alt:before { content: "\f12f"; }
+.icon-google-code:before { content: "\f130"; }
+.icon-google-developers:before { content: "\f131"; }
+.icon-gradle:before { content: "\f132"; }
+.icon-grails:before { content: "\f133"; }
+.icon-grails-alt:before { content: "\f134"; }
+.icon-grunt:before { content: "\f135"; }
+.icon-gulp:before { content: "\f136"; }
+.icon-gulp-alt:before { content: "\f137"; }
+.icon-hadoop:before { content: "\f138"; }
+.icon-haskell:before { content: "\f139"; }
+.icon-heroku:before { content: "\f13a"; }
+.icon-html:before { content: "\f13b"; }
+.icon-html5:before { content: "\f13c"; }
+.icon-html5-alt:before { content: "\f13d"; }
+.icon-iphone:before { content: "\f13e"; }
+.icon-java:before { content: "\f13f"; }
+.icon-java-bold:before { content: "\f140"; }
+.icon-java-duke:before { content: "\f141"; }
+.icon-javascript:before { content: "\f142"; }
+.icon-javascript-alt:before { content: "\f143"; }
+.icon-jetty:before { content: "\f144"; }
+.icon-jquery:before { content: "\f145"; }
+.icon-kde:before { content: "\f146"; }
+.icon-laravel:before { content: "\f147"; }
+.icon-line-graph:before { content: "\f148"; }
+.icon-linux-mint:before { content: "\f149"; }
+.icon-looking:before { content: "\f14a"; }
+.icon-magento:before { content: "\f14b"; }
+.icon-mariadb:before { content: "\f14c"; }
+.icon-maven:before { content: "\f14d"; }
+.icon-microscope:before { content: "\f14e"; }
+.icon-mobile-device:before { content: "\f14f"; }
+.icon-mobile-phone-alt:before { content: "\f150"; }
+.icon-mobile-phone-broadcast:before { content: "\f151"; }
+.icon-mongodb:before { content: "\f152"; }
+.icon-mssql:before { content: "\f153"; }
+.icon-mysql:before { content: "\f154"; }
+.icon-mysql-alt:before { content: "\f155"; }
+.icon-netbsd:before { content: "\f156"; }
+.icon-nginx:before { content: "\f157"; }
+.icon-nginx-alt:before { content: "\f158"; }
+.icon-nginx-alt2:before { content: "\f159"; }
+.icon-nodejs:before { content: "\f15a"; }
+.icon-npm:before { content: "\f15b"; }
+.icon-objc:before { content: "\f15c"; }
+.icon-openshift:before { content: "\f15d"; }
+.icon-oracle:before { content: "\f15e"; }
+.icon-oracle-alt:before { content: "\f15f"; }
+.icon-osx:before { content: "\f160"; }
+.icon-perl:before { content: "\f161"; }
+.icon-phone-alt:before { content: "\f162"; }
+.icon-phone-gap:before { content: "\f163"; }
+.icon-phone-retro:before { content: "\f164"; }
+.icon-php:before { content: "\f165"; }
+.icon-php-alt:before { content: "\f166"; }
+.icon-playframework:before { content: "\f167"; }
+.icon-playframework-alt:before { content: "\f168"; }
+.icon-plone:before { content: "\f169"; }
+.icon-postgres:before { content: "\f16a"; }
+.icon-postgres-alt:before { content: "\f16b"; }
+.icon-python:before { content: "\f16c"; }
+.icon-raspberrypi:before { content: "\f16d"; }
+.icon-reactjs:before { content: "\f16e"; }
+.icon-redhat:before { content: "\f16f"; }
+.icon-redis:before { content: "\f170"; }
+.icon-ruby:before { content: "\f171"; }
+.icon-ruby-on-rails:before { content: "\f172"; }
+.icon-ruby-on-rails-alt:before { content: "\f173"; }
+.icon-rust:before { content: "\f174"; }
+.icon-sass:before { content: "\f175"; }
+.icon-satellite:before { content: "\f176"; }
+.icon-scala:before { content: "\f177"; }
+.icon-scala-alt:before { content: "\f178"; }
+.icon-script:before { content: "\f179"; }
+.icon-script-alt:before { content: "\f17a"; }
+.icon-shell:before { content: "\f17b"; }
+.icon-sitefinity:before { content: "\f17c"; }
+.icon-solaris:before { content: "\f17d"; }
+.icon-splatter:before { content: "\f17e"; }
+.icon-spring:before { content: "\f17f"; }
+.icon-suse:before { content: "\f180"; }
+.icon-svg:before { content: "\f181"; }
+.icon-symfony:before { content: "\f182"; }
+.icon-tomcat:before { content: "\f183"; }
+.icon-ubuntu:before { content: "\f184"; }
+.icon-unity:before { content: "\f185"; }
+.icon-wireless:before { content: "\f186"; }
+.icon-wordpress:before { content: "\f187"; }
+.icon-x11:before { content: "\f188"; }
