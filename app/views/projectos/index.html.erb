@@ -1,15 +1,20 @@
 
   <section id="cd-intro" style="border-top: 9px solid white;  ">
-<!--     <h1>Ryan Dowler <br> Developer Portfolio</h1> -->
-    <div id="cd-intro-tagline"> </div> <!-- used by the css -->
+    <div class="row">
+      <%= image_tag ("bg6") , :class => "main-img img img-responsive col-md-4 col-md-push-4 col-sm-5 col-sm-push-3 col-xs-6 col-xs-push-3"%>
+    </div>
+    
+    <div class="row">
+      <a class="cd-btn2 inforBtn btn col-md-2 col-md-push-5 col-sm-3 col-sm-push-4 col-xs-6 col-xs-push-3" onclick="scrollDown()">
+         Give me More Info <br><br>
+        <span class="glyphicon glyphicon-triangle-bottom"></span>
+      </a>
+    </div>
+
+  <!--   <div id="cd-intro-tagline"> </div>  --><!-- used by the css -->
     <center>
       <a href="#cd-placeholder-1" class="cd-btn" style="display: none">
         Contact Me
-      </a>
-
-      <a class="cd-btn2 inforBtn" onclick="scrollDown()">
-         Give me More Info <br><br>
-        <span class="glyphicon glyphicon-triangle-bottom"></span>
       </a>
       <script>
         function scrollDown(){
