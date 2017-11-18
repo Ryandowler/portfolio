@@ -27,7 +27,7 @@
 	<!-- image -->
 	<div class="row col-md-6 col-md-push-3" style="background-color: orange;">
 		<!-- check if image file exists before display -->
-		<%# @projecto.image.thumb.file.exists? ? 
+		<%= @projecto.image.thumb.file.exists? ? 
 				(image_tag @projecto.image.thumb.url.to_s) : 
 		"No Project Image (add default image)" %>
 	</div>

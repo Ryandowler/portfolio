@@ -5,20 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-
-
-    
+<style>
+  li{list-style-type:none;}
+</style>
   <title>Ryan Dowler</title>
 </head>
 <body>
-    <header class="cd-header col-lg-12 " style="background-color:  #E0E0E0; border-bottom: 4px solid white;">
-    <div id="cd-logo"><a href="/">Ryan Dowler</a></div>
-    <nav class="cd-primary-nav" style="margin-top: -22px;">
+    <header class="cd-header col-lg-12" style="background-color: #E0E0E0; border-bottom: 4px solid white;">
+    <div id="cd-logo" class="col-lg-3 hidden-xs"><a href="/">Ryan Dowler</a></div>
+    <nav class="cd-primary-nav col-lg-6 hidden-xs">
       <ul>
-        <!-- inser more links here -->
         <li><span><%= link_to "Download CV", root_url+'downloads/test1.pdf', { target: '_blank' } %></span></li>
         <li><a href="#0"><span>Contact Me</span></a></li> 
       </ul>
-    </nav> <!-- cd-primary-nav -->
+    </nav>
+    <div class="col-xs-8 col-xs-push-2" style="padding-top: 20px;">
+      <div class="visible-xs col-xs-6">
+        <%= link_to root_url+'downloads/test1.pdf', { target: '_blank' } do %>
+            CV <i class="fa fa-file-pdf-o" aria-hidden="true"></i> 
+        <% end %>
+      </div>
+      <div class="visible-xs col-xs-6">
+        <%= link_to root_url, { target: '_blank' } do %>
+            Contact <i class="fa fa-phone" aria-hidden="true"></i> 
+        <% end %>
+      </div>
+    </div>
   </header>
+
 

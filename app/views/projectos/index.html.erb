@@ -1,6 +1,6 @@
 
-  <section id="cd-intro" style="border-top: 9px solid white;  ">
-    <div class="row" style="padding-bottom: 35px;">
+  <section id="cd-intro">
+    <div class="row" style="padding-bottom: 35px; padding-top: 15px;">
       <%= image_tag ("bg6") , :class => "main-img img img-responsive col-md-4 col-md-push-4 col-sm-5 col-sm-push-3 col-xs-10 col-xs-push-1"%>
     </div>
     
@@ -19,17 +19,19 @@
       <script>
         function scrollDown(){
             $('html, body').animate({
-              scrollTop: ($('.cd-secondary-nav').offset().top) +20
+              scrollTop: ($('.cd-secondary-nav').offset().top) +55
           },800);
         }
+
+
       </script>
     </center>
   </section> <!-- #cd-intro -->
 
   <div class="cd-secondary-nav">
-    <a href="#0" class="cd-secondary-nav-trigger">Menu<span></span></a> <!-- button visible on small devices -->
+    <a onclick="mobileMenuClicked();" href="#0" class="cd-secondary-nav-trigger">Menu<span></span></a> <!-- button visible on small devices -->
     <nav>
-      <ul>
+      <ul id="mobileMenu">
         <li>
           <a href="#cd-placeholder-1">
             <b>About me</b>
@@ -51,12 +53,6 @@
         <li>
           <a href="#cd-placeholder-4">
             <b>Projects</b>
-            <span></span><!-- icon -->
-          </a>
-        </li>
-        <li class ="slideContantcBtn">
-          <a href="#cd-placeholder-5">
-            <b>remove this</b>
             <span></span><!-- icon -->
           </a>
         </li>
@@ -84,12 +80,15 @@
     <section id="cd-placeholder-3" class="cd-section cd-container">
     <h2><span>Industry Projects</span></h2>
       <p>
-        The following are projects I am grateful to have worked on professionally.
+        The following are projects I am grateful to have worked on within the industry.
       </p>
     </section> <!-- #cd-placeholder-1 -->
     <section id="cd-placeholder-4" class="cd-section cd-container" >
-    <h2><span><%= link_to "Projects", projectos_projects_all_path, title: 'View all projects', data: { toggle: 'tooltip'} %></span></h2>
-    <div class="" style="background-color: red;" >
+    <h2><span><%= link_to projectos_projects_all_path, title: 'View all projects', data: { toggle: 'tooltip'} do %>
+      Projects (<%= @numProjectos %>)
+      <% end %>
+    </span></h2>
+    <div class="" style=" margin-bottom: 100px;" >
       <% @projectos.first(2).each do |p| %>
         <div class="col-md-5 <%= "#{cycle('leftProject', 'col-md-push-1 rightProject')}" %>">
             <div class="product-item">
@@ -119,16 +118,16 @@
     </div>
     </div>
     </section> <!-- #cd-placeholder-1 -->
-      <div class="col-md-12">
-        <%= button_to projectos_projects_all_path, {:method => "get", class: "btn viewAllBtn col-md-2"} do  %>
+<!--       <div class="col-md-12" style="bottom: 0px;">
+        <%# button_to projectos_projects_all_path, {:method => "get", class: "btn viewAllBtn col-md-2"} do  %>
           <text>View all projects (<%= @numProjectos %>) <i class="fa fa-arrow-right" aria-hidden="true"></i> </text>
-        <% end %>
-      </div>
-      <div class="col-md-12" style="margin-top: -70px;">
-      <%= button_to projectos_projects_all_path, {:method => "get", class: "btn viewAllBtn col-md-2"} do  %>
+        <%# end %>
+      </div> -->
+<!--       <div class="col-md-12" style="margin-top: -70px;">
+      <%# button_to projectos_projects_all_path, {:method => "get", class: "btn viewAllBtn col-md-2"} do  %>
         <text>Contact <i class="fa fa-phone" aria-hidden="true"></i> </text>
-      <% end %>
-    </div>
+      <%# end %>
+    </div> -->
   </main> <!-- .cd-main-content -->
 
 <style>
@@ -142,5 +141,5 @@
   .project p {color: grey}
   .leftProject{ margin-left: -15px; }
   .rightProject{ margin-left: 50px; }
-  .viewAllBtn{ float: right; margin: 50px; }
+  .viewAllBtn{ align-self: center; margin-top: 70px; }
 </style>

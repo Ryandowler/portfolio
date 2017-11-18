@@ -3,7 +3,9 @@ jQuery(document).ready(function($){
 	var secondaryNav = $('.cd-secondary-nav'),
 		secondaryNavTopPosition = secondaryNav.offset().top,
 		taglineOffesetTop = $('#cd-intro-tagline').offset().top + $('#cd-intro-tagline').height() + parseInt($('#cd-intro-tagline').css('paddingTop').replace('px', '')),
-		contentSections = $('.cd-section');
+		contentSections = $('.cd-section'),
+		addedLinksToMobilemenu = false,
+		menuClosed = true;
 	
 	$(window).on('scroll', function(){
 		//on desktop - assign a position fixed to logo and action button and move them outside the viewport
@@ -56,7 +58,13 @@ jQuery(document).ready(function($){
 	$('.cd-secondary-nav-trigger').on('click', function(event){
 		event.preventDefault();
 		$(this).toggleClass('menu-is-open');
-		secondaryNav.find('ul').toggleClass('is-visible');
+		theUl = secondaryNav.find('ul');
+		theUl.toggleClass('is-visible');
+		//add the items to mobile menu Once
+		if (!addedLinksToMobilemenu){
+			theUl.append('<li id="backToTop" class="visible-xs"><a href="" onclick="scrollUp(event);"><span class="tab"><text id="tb">Back To Top <i class="fa fa-arrow-up" aria-hidden="true"></i> </span> </span></a></li>');
+			addedLinksToMobilemenu = true;
+		}
 	});
 
 	//smooth scrolling when clicking on the secondary navigation items
@@ -76,4 +84,58 @@ jQuery(document).ready(function($){
 	$('.cd-primary-nav').on('click', function(event){
 		if($(event.target).is('.cd-primary-nav')) $(this).children('ul').toggleClass('is-visible');
 	});
+
+
+
+
 });
+
+//scroll to top when click button in mobile menu
+function scrollUp(event){
+event.preventDefault();
+$('html, body').animate({
+	scrollTop: ($('.cd-header').offset().top)
+	},800);
+
+	closeMobileMenu();
+}	
+
+//close menu if click anywhere but the menu
+notFirstTime =false; //needed so menu doesnt close when first click
+$(document).click(function() {
+	var itsVisible = $( "#mobileMenu" ).hasClass("is-visible"); //the menu is visible
+    if (itsVisible){ 
+    	if(notFirstTime ==false){
+    		//alert("do nothibg"); 
+    		notFirstTime =true;
+    	}else{
+    		//alert("itsVisible"); 
+    		closeMobileMenu();
+    		notFirstTime =false;
+    	}
+    }
+    else{ notFirstTime =false; }
+});
+
+function closeMobileMenu(){
+	$('.cd-secondary-nav-trigger').removeClass('menu-is-open');
+
+	$('.cd-secondary-nav').find('ul').removeClass('is-visible');
+}
+
+function openMobileMenu(){
+	$('.cd-secondary-nav-trigger').addClass('menu-is-open');
+
+	$('.cd-secondary-nav').find('ul').addClass('is-visible');
+}
+
+function mobileMenuClicked(){ 
+	if (menuClosed == true){ 
+		openMobileMenu();
+		menuClosed = false;
+	}else{
+		closeMobileMenu();
+		menuClosed = true;
+	}
+
+};
