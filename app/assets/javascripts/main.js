@@ -118,9 +118,8 @@ $(document).click(function() {
     	}
     }
     else{ 
+    	alert("------- NOT visible -");
     	notFirstTime =false; 
-    	alert("ELSEEEEE");
-    	console.log("ELSEEEEE");
     }
 });
 
@@ -144,7 +143,6 @@ function mobileMenuClicked(){
 	}else{
 		closeMobileMenu();
 		menuClosed = true;
-		alert("- 2 -");
 	}
 
 };
