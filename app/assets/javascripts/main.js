@@ -1,11 +1,10 @@
+var menuClosed = true;
 jQuery(document).ready(function($){
-	
 	var secondaryNav = $('.cd-secondary-nav'),
 		secondaryNavTopPosition = secondaryNav.offset().top,
 		taglineOffesetTop = $('#cd-intro-tagline').offset().top + $('#cd-intro-tagline').height() + parseInt($('#cd-intro-tagline').css('paddingTop').replace('px', '')),
 		contentSections = $('.cd-section'),
-		addedLinksToMobilemenu = false,
-		menuClosed = true;
+		addedLinksToMobilemenu = false;
 	
 	$(window).on('scroll', function(){
 		//on desktop - assign a position fixed to logo and action button and move them outside the viewport
