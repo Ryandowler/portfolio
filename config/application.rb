@@ -23,6 +23,6 @@ module Portfolio
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false # Heroku requires this to be false.
-    config.serve_static_files = true ##added to make images reappear on heroku after production
+    config.serve_static_files = false ##added to make images reappear on heroku after production
   end
 end
