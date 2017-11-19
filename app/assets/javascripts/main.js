@@ -83,10 +83,6 @@ jQuery(document).ready(function($){
 	$('.cd-primary-nav').on('click', function(event){
 		if($(event.target).is('.cd-primary-nav')) $(this).children('ul').toggleClass('is-visible');
 	});
-
-
-
-
 });
 
 //scroll to top when click button in mobile menu
@@ -95,44 +91,20 @@ event.preventDefault();
 $('html, body').animate({
 	scrollTop: ($('.cd-header').offset().top)
 	},800);
-
 	closeMobileMenu();
 }	
 
-//close menu if click anywhere but the menu
-notFirstTime =false; //needed so menu doesnt close when first click
-$(document).click(function() {
-	var itsVisible = $( "#mobileMenu" ).hasClass("is-visible"); //the menu is visible
-    if (itsVisible){ 
-    	alert("------- visible -");
-    	console.log("------- visible -");
-    	if(notFirstTime ==false){
-    		alert("do nothibg"); 
-    		console.log("do nothibg"); 
-    		notFirstTime =true;
-    	}else{
-    		alert("itsVisible"); 
-    		console.log("itsVisible"); 
-    		closeMobileMenu();
-    		notFirstTime =false;
-    	}
-    }
-    else{ 
-    	alert("------- NOT visible -");
-    	notFirstTime =false; 
-    }
-});
-
 function closeMobileMenu(){
 	$('.cd-secondary-nav-trigger').removeClass('menu-is-open');
-
 	$('.cd-secondary-nav').find('ul').removeClass('is-visible');
+	$('#mobileMenuBtn').removeClass('mobileMenuBtn_Open');
 }
 
 function openMobileMenu(){
 	$('.cd-secondary-nav-trigger').addClass('menu-is-open');
-
 	$('.cd-secondary-nav').find('ul').addClass('is-visible');
+	alert("uuu");
+	$('#mobileMenuBtn').addClass('mobileMenuBtn_Open');
 }
 
 function mobileMenuClicked(){ 
@@ -144,5 +116,15 @@ function mobileMenuClicked(){
 		closeMobileMenu();
 		menuClosed = true;
 	}
+}
 
-};
+//make mobile menu close when click anywhere but the menu its-self
+$( document ).ready(function() {
+  $("body").click(function(){
+      closeMobileMenu();
+  });
+
+  $("#mobileMenuBtn").click(function(event) {
+    event.stopPropagation();
+  });
+});
