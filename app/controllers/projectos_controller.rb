@@ -34,6 +34,7 @@ class ProjectosController < ApplicationController
 
     respond_to do |format|
       if @projecto.save
+        UserMailer.signup_confirmation(@projecto).deliver
         format.html { redirect_to @projecto, notice: 'Projecto was successfully created.' }
         format.json { render :show, status: :created, location: @projecto }
       else

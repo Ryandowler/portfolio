@@ -32,6 +32,7 @@ group :development, :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'sqlite3'
+  gem 'figaro' #env variables
 end
 
 group :development do

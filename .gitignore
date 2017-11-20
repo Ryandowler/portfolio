@@ -17,3 +17,6 @@
 /tmp
 
 public/assets/**
+
+# Ignore application configuration (env vars)
+/config/application.yml
