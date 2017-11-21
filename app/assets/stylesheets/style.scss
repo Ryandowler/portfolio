@@ -353,6 +353,7 @@ height: auto;
     /* slide in when the secondary nav gets fixed */
     right: 5%;
     opacity: 1;
+    height: 7%;
   }
 }
 
@@ -668,4 +669,8 @@ Placeholder Sections
 #contact_body{
   height: 80px;
   width: 100%;
+}
+
+#cd-logo a:hover{
+  background-color: transparent;
 }
