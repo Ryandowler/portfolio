@@ -7,8 +7,8 @@ class UserMailer < ApplicationMailer
   #
 
   #default from: "ryan1@gmail.com"
-  def signup_confirmation(projecto)
-  	@projecto = projecto
-    mail to: @projecto.title, subject: "yooooo"
+  def signup_confirmation(contact)
+  	@contact = contact
+    mail to: @contact.email, subject: "yooooo"
   end
 end

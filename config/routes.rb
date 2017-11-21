@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   get 'projectos/projects_all'
   
   resources :projectos
