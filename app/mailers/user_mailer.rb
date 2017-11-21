@@ -9,6 +9,6 @@ class UserMailer < ApplicationMailer
   default to: "ryandowler999@hotmail.com"
   def signup_confirmation(contact)
   	@contact = contact
-    mail to: "ryandowler999@hotmail.com", subject: "Portfolio - Inquiry"
+    mail to: "ryandowler999@hotmail.com", subject: "Portfolio - Inquiry", from: @contact.email
   end
 end
