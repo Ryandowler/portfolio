@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   root 'projectos#index'
   resources :posts
 
+  get '/contact', to: 'contacts#new'
+  get 'contacts' => 'contacts#show'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   

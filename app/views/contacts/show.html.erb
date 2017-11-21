@@ -1,19 +1,68 @@
-<p id="notice"><%= notice %></p>
+<style>body{background-color: white;}	</style>
+<center>
+<p id="notice"><%= notice %></p><br><br
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+<div id="allContent">
+	<div style="height: 140px;">
+		<font id="movingText" size="7" style="display: none">Thanks for getting in touch <%= @contact.name %></font>
+		<font id="text2" size="6" style="display: none">Looking forward to a chat</font> <br><br>
+		<font id="text3" size="6" style="display: none">and a big ol' cup of code juice</font>
+	</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+	<div id="coffeeImg" style="height: 400px; display: none;">
+		<%= image_tag 'coffee' %>
+	</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @contact.body %>
-</p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<!-- 	<div style="padding-top: 20%;">
+		<%# link_to 'Bring me Back to the Front Page', contacts_path %>
+	</div> -->
+	</center>
+</div>
+
+
+
+
+
+<script>
+
+
+$(document).ready(function() {
+
+  // place this within dom ready function
+  function showpanel() {   
+  	$("#movingText").css("display", "block");    
+  	$("#movingText").fadeOut(2300);  
+ }
+ setTimeout(showpanel, 1000);
+
+ function showpanel2() {    
+    // $("#text2").css("display", "block");
+    $("#text2").fadeIn(4000);
+ }
+ setTimeout(showpanel2, 3000);
+
+ function showpanel3() {    
+    // $("#text2").css("display", "block");
+    $("#text3").fadeIn(4000);
+ }
+ setTimeout(showpanel3, 5000);
+
+ function showpanel4() {    
+    // $("#text2").css("display", "block");
+    $("#coffeeImg").css("display", "block"); 
+    
+ }
+ setTimeout(showpanel4, 7000);
+
+function showpanel5() {    
+    // $("#text2").css("display", "block");
+    $("#allContent").fadeOut(2300); 
+    window.location = "/";
+    
+ }
+ setTimeout(showpanel5, 9000);
+
+});
+
+</script>

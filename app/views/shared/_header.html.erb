@@ -16,7 +16,7 @@
     <nav class="cd-primary-nav col-lg-6 hidden-xs">
       <ul>
         <li><span><%= link_to "Download CV", root_url+'downloads/test1.pdf', { target: '_blank' } %></span></li>
-        <li><a href="#0"><span>Contact Me</span></a></li> 
+        <li><a href="/contacts/new"><span>Contact Me</span></a></li> 
       </ul>
     </nav>
     <div class="col-xs-12" style="padding-top: 20px; margin-left: 10px;">
@@ -26,7 +26,7 @@
         <% end %>
       </div>
       <div class="visible-xs col-xs-6">
-        <%= link_to root_url, { target: '_blank' } do %>
+        <%= link_to new_contact_path do %>
             Contact <i class="fa fa-phone" aria-hidden="true"></i> 
         <% end %>
       </div>
