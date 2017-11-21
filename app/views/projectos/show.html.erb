@@ -2,7 +2,7 @@
 
 <style>
 	.projectTitle{
-		background-color: yellow;
+		
 		margin-top: 30px;
 		text-align: center;
 		font-weight: 400;
@@ -11,39 +11,307 @@
 		text-transform: capitalize;
 	}
 	.projectBody{
-		background-color: aqua;
 		margin-top: 40px;
 		padding: 15px;
 		border-radius: 3px;
 		font-size: 1.2em;
 	}
+
+	#bodyText{
+		border: 1px solid rgba(0,0,0,0.2);
+		margin-bottom: 50px;
+	}
+
+	/*snapchat*/
+
+
+.snapchatViewMode{
+  background-color: #222;
+  overflow: hidden;
+}
+
+
+.slider {
+  width: 90vmin;
+  height: 90vmin;
+  -webkit-perspective: 100vmin;
+          perspective: 100vmin;
+  margin: auto;
+  -webkit-perspective-origin: top center;
+          perspective-origin: top center;
+  position: relative;
+  box-sizing: border-box;
+}
+.slider__item {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 15vmin;
+  box-sizing: border-box;
+  -webkit-transition: -webkit-transform 0.18s ease;
+  transition: -webkit-transform 0.18s ease;
+  transition: transform 0.18s ease;
+  transition: transform 0.18s ease, -webkit-transform 0.18s ease;
+}
+.slider__item:nth-child(1) {
+  -webkit-transform: translate3d(0, 0, 0vmin);
+          transform: translate3d(0, 0, 0vmin);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  z-index: 7;
+}
+.slider__item:nth-child(2) {
+  -webkit-transform: translate3d(0, 0, -15vmin);
+          transform: translate3d(0, 0, -15vmin);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+  z-index: 6;
+}
+.slider__item:nth-child(3) {
+  -webkit-transform: translate3d(0, 0, -30vmin);
+          transform: translate3d(0, 0, -30vmin);
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  z-index: 5;
+}
+.slider__item:nth-child(4) {
+  -webkit-transform: translate3d(0, 0, -45vmin);
+          transform: translate3d(0, 0, -45vmin);
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+  z-index: 4;
+}
+.slider__item:nth-child(5) {
+  -webkit-transform: translate3d(0, 0, -60vmin);
+          transform: translate3d(0, 0, -60vmin);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  z-index: 3;
+}
+.slider__item:nth-child(6) {
+  -webkit-transform: translate3d(0, 0, -75vmin);
+          transform: translate3d(0, 0, -75vmin);
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+  z-index: 2;
+}
+.slider__item:nth-child(7) {
+  -webkit-transform: translate3d(0, 0, -90vmin);
+          transform: translate3d(0, 0, -90vmin);
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  z-index: 1;
+}
+.slider__item:nth-child(8) {
+  -webkit-transform: translate3d(0, 0, -105vmin);
+          transform: translate3d(0, 0, -105vmin);
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+  z-index: 0;
+}
+.slider__image {
+  width: 100%;
+  height: 80%;
+  background-color: #999;
+  border: 1.5vmin solid #eee;
+  box-sizing: border-box;
+  box-shadow: 0px 3vmin 3vmin rgba(0, 0, 0, 0.75), 0 -1.5vmin 2.7vmin rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  display: block;
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.18s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.18s ease;
+  transition: transform 0.18s ease, opacity 0.2s ease;
+  transition: transform 0.18s ease, opacity 0.2s ease, -webkit-transform 0.18s ease;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+.slider__caption {
+  height: 20%;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.slider__btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 9vmin;
+  height: 9vmin;
+  margin: 2vmin auto;
+  border-right: 2vmin solid rgba(255, 255, 255, 0.8);
+  border-bottom: 2vmin solid rgba(255, 255, 255, 0.65);
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transform: perspective(10vmin) rotateX(-30deg) rotateZ(45deg);
+          transform: perspective(10vmin) rotateX(-30deg) rotateZ(45deg);
+}
+.slider__btn:active {
+  border-right-color: #dd6;
+  border-bottom-color: #dd6;
+}
+
+#snapchatInfo{
+	display: none;
+}
+
+
+	/* ./snapchat*/
+
 </style>
 
 <% if !user_signed_in? %>
 	You are not Logged in yet. <br><br>
 	<%= link_to('Login here', new_user_session_path)  %>  
 <% else %>
-	<div class="container" style="background-color: pink;">
-	<!-- image -->
-	<div class="row col-md-6 col-md-push-3" style="background-color: orange;">
-		<!-- check if image file exists before display -->
-		<%= @projecto.image.thumb.file.exists? ? 
-				(image_tag @projecto.image.thumb.url.to_s) : 
-		"No Project Image (add default image)" %>
+	<div class="container">
+		<div style="font-size: .7em;">
+				<div> Completed tick</div>
+				<div> In-progress circle</div>
+			</div>
+		<!-- image -->
+		<div class="row col-md-6 col-md-push-3" >
+			<!-- check if image file exists before display -->
+			<%= @projecto.image.thumb.file.exists? ? 
+					(image_tag @projecto.image.thumb.url.to_s) : 
+			"No Project Image (add default image)" %>
+		</div>
+		<!-- title -->
+		<div class="col-md-12 projectTitle">
+			<h1><%= @projecto.title %></h1>
+			<h3 style="font-size: .6em;">
+				<i class="icon-ruby language_icon red" data-toggle="tooltip" title="Ruby"></i>
+				<i class="icon-jquery language_icon Jqueryblue" data-toggle="tooltip" title="Jquery"></i>
+				<i class="icon-ruby-on-rails-alt language_icon red" data-toggle="tooltip" title="Beautiful Rails"></i>
+				<i class="icon-php language_icon phpblue" data-toggle="tooltip" title="PHP"></i>
+			</h3>
+		</div>
+		<!-- body -->
+		<div id="bodyText" class="col-md-12 projectBody">
+			<h1><%= @projecto.body %></h1>
+		</div>
+		<!-- snapchat -->
+		<div id="snapchat" style="display: none;">
+			<div class="slider">
+			  <figure class="slider__item"><img class="slider__image" src="https://unsplash.it/600/360?image=#{itemsImg}"/>
+			    <figcaption class="slider__caption">Image - 533</figcaption>
+			  </figure>
+			  <figure class="slider__item"><img class="slider__image" src="https://unsplash.it/600/360?image=#{itemsImg}"/>
+			    <figcaption class="slider__caption">Image - 623</figcaption>
+			  </figure>
+			  <figure class="slider__item"><img class="slider__image" src="https://unsplash.it/600/360?image=#{itemsImg}"/>
+			    <figcaption class="slider__caption">Image - 419</figcaption>
+			  </figure>
+			  <figure class="slider__item"><img class="slider__image" src="https://unsplash.it/600/360?image=#{itemsImg}"/>
+			    <figcaption class="slider__caption">Image - 490</figcaption>
+			  </figure>
+			  <figure class="slider__item"><img class="slider__image" src="https://unsplash.it/600/360?image=#{itemsImg}"/>
+			    <figcaption class="slider__caption">Image - 695</figcaption>
+			  </figure>
+			  <figure class="slider__item"><img class="slider__image" src="https://unsplash.it/600/360?image=#{itemsImg}"/>
+			    <figcaption class="slider__caption">Image - 458</figcaption>
+			  </figure>
+			  <figure class="slider__item"><img class="slider__image" src="https://unsplash.it/600/360?image=#{itemsImg}"/>
+			    <figcaption class="slider__caption">Image - 702</figcaption>
+			  </figure>
+			</div>
+			<div class="slider__btn"></div>
+		</div>
+
+		<div class="col-md-4 col-md-push-4" style="width: 30%">
+			<%= image_tag 'snapchat', class: "img img-responsive" %>
+			<div id="infoIconSnapchat" style="position: absolute; color: #F44848;">
+				<i class="fa fa-info-circle" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div id="snapchatInfo" class="col-md-4" style="width: 37%;background-color: #3299ed; float: right; padding-bottom: 30px; margin-bottom: 2px; border-radius: 5px;">
+			<center>What's this? <i class="fa fa-info-circle" aria-hidden="true" style="float: right; margin-top: 5px;"></i></center>
+			<div style="background-color: white; padding-top: 20px; padding-left: 5px; padding-right: 5px; padding-bottom: 10px; margin-top: 10px; font-size: 0.9em; border-radius: 4px;">
+				The good, the bad, the sad and the celebrations. <br>
+				I love programming, I have ever since I discovered it, because of this, every app i've created
+				can be seen from early stages to finishing touches. Not intentionally of course, just because im a big nerd.
+				<br><br>
+				I have only got this portfollio going recently, the next feature to be added will be this timeline/gallery segment for each project, sure why not? 
+				<br><br>
+				<!-- <a id="previewNow"> Preview it now </a> -->
+				<center><a id="closeMenu"> Close This </a></center>
+			</div>
+		</div>
 	</div>
-	<!-- title -->
-	<div class="col-md-12 projectTitle">
-		<h1><%= @projecto.title %></h1>
-	</div>
-	<!-- body -->
-	<div class="col-md-12 projectBody">
-		<h1><%= @projecto.body %></h1>
-	</div>
-</div>
 <% link_to 'Edit', edit_projecto_path(@projecto) %>
 <% link_to 'Back', projectos_path %>
 <% end %>
 
+
+<script>
+	$(function(){
+	var	btn = $(".slider__btn");
+	
+	btn.on("click",function(){
+		$(".slider__item").first().clone().appendTo(".slider");
+		$(".slider__image").first().css({transform: "rotateX(-180deg)", opacity: 0});
+		setTimeout(function(){
+			$(".slider__item").first().remove();
+		},200);
+	});
+});
+
+//click anywhere but snapchat slider and it closes
+$( document ).ready(function() {
+  $("body").click(function(){
+      $("#snapchat").css("display", "none");
+  });
+
+  $("#snapchat").click(function(event) {
+    event.stopPropagation();
+  });
+});
+
+
+//show snaochat info (make this for click too)
+$(document).ready(function(){
+    $("#infoIconSnapchat").hover(function(){
+        $("#snapchatInfo").css("display", "block");
+        }, function(){
+        //$("#snapchatInfo").css("display", "none");
+    });
+
+     $("#previewNow").hover(function(){
+        $("#snapchat").css("display", "block");
+        $("body").addClass("snapchatViewMode");
+        }, function(){
+        //$("#snapchatInfo").css("display", "none");
+    });
+
+    $("#closeMenu").hover(function(){
+       $("#snapchatInfo").css("display", "none");
+        }, function(){
+        //$("#snapchatInfo").css("display", "none");
+    });
+});
+
+
+//preview new feature coming
+function previewSnapchatFeature(){
+	 $("#snapchat").css("display", "block");
+}
+
+
+function showpanel() {   
+  	$("#snapchat").css("display", "block");
+}
+
+</script>
 
 
 
