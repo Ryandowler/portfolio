@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         UserMailer.signup_confirmation(@contact).deliver
-        format.html { redirect_to @contact, notice: 'Message successfully sent!.' }
+        format.html { redirect_to @contact, notice: 'Message successfully sent!' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
