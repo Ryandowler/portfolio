@@ -165,6 +165,9 @@
 	display: none;
 }
 
+.blueFont{
+	color: #337ab7;
+}
 
 	/* ./snapchat*/
 
@@ -176,8 +179,9 @@
 <% else %>
 	<div class="container">
 		<div style="font-size: .7em;">
-				<div> Completed tick</div>
-				<div> In-progress circle</div>
+				<h1 id="completedVal" style="display: none;"><%= @projecto.completed %></h1>
+				<div id="completedProject" style="display: none;"> Completed <i class="fa fa-check blueFont" aria-hidden="true"></i> </div>
+				<div id="inProgressProject" style="display: none;"> In-progress <i class="fa fa-spinner blueFont" aria-hidden="true"></i></div>
 			</div>
 		<!-- image -->
 		<div class="row col-md-6 col-md-push-3" >
@@ -244,7 +248,7 @@
 				I have only got this portfollio going recently, the next feature to be added will be this timeline/gallery segment for each project, sure why not? 
 				<br><br>
 				<!-- <a id="previewNow"> Preview it now </a> -->
-				<center><a id="closeMenu"> Close This </a></center>
+				<center><a id="closeMenu"> Close This </a></center>	
 			</div>
 		</div>
 	</div>
@@ -275,6 +279,15 @@ $( document ).ready(function() {
   $("#snapchat").click(function(event) {
     event.stopPropagation();
   });
+
+	var projectStatus = $("#completedVal").text();
+
+	if (projectStatus){
+		$("#completedProject").css("display", "block");
+	}else{
+		$("#inProgressProject").css("display", "block");
+	}
+
 });
 
 
